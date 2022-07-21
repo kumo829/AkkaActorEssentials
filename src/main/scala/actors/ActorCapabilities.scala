@@ -6,15 +6,17 @@ object ActorCapabilities extends App{
   class SimpleActor extends Actor {
 
 //    context.system //A reference to the ActorSystem
+//    context.sender or sender //A reference to the actor that last sent a message Actor (or Actor.noSender)
 //    context.self or simply self //A reference to the same actor, equivalent to `this`
 
     override def receive: Receive = {
-      case "Hi!" => context.sender() ! "Hello, there!" //replying to a message
+      case "Hi!" => sender ! "Hello, there!" //replying to a message
       case message: String => println(s"[simple actor] I have received '$message'")
       case number: Int => println(s"[simple actor] I have received a number $number")
       case SpecialMessage(content) => println(s"[simple actor] I have received something special $content")
       case SendMessageToYourself(content) => self ! content
       case SayHiTo(ref: ActorRef) => ref ! "Hi!"
+      case WirelessPhoneMessage(content, ref) => ref forward content + "-s"
     }
   }
 
@@ -38,10 +40,17 @@ object ActorCapabilities extends App{
   case class SendMessageToYourself(content: String)
   simpleActor ! SendMessageToYourself("I am an actor and I am proud of it")
 
-  //3 - Actors can reply to messages using their context
+  //3. Actors can reply to messages using their context
   val alice = actorSystem.actorOf(Props[SimpleActor], "alice")
   val bob = actorSystem.actorOf(Props[SimpleActor], "bob")
 
   case class SayHiTo(ref: ActorRef)
   alice ! SayHiTo(bob)
+
+  //4. Dead Letters
+//  alice ! "Hi!"
+
+  //5. Forwarding messages
+  case class WirelessPhoneMessage(content: String, ref: ActorRef)
+  alice ! WirelessPhoneMessage("Hi!", bob)
 }

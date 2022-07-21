@@ -30,6 +30,34 @@ With Actors
 
 So, in a sense **Actores are objects that we can't access directly, but only send messages to**.
 
+## Actor Basics
+Every `Actor` type derives from:
+
+```scala
+trait Actor {
+  def receive: Receive //Message handler object, is retreived by Akka, and is invoked when the actor processes a message
+}
+```
+
+The `Receive` type is an alias:
+```scala
+type Receive = PartialFunction[Any, Unit]
+```
+Actors need infrastructure:
+```scala
+val system: ActorSystem = ActorSystem("actorSystemName")
+```
+
+Creating Actors is not done in the traditional way:
+```scala
+val actor: ActorRef = system.actorOf(Props[MyActor], "myActorName")
+```
+
+The only way to communicate with an Actor is by sending a message using the *tell* (`!`) method with the message that you want to send.
+The messages can be of any type, including primitive types and custom types as long as they are **immutable** and **serializable**.
+```scala
+actor ! "hello, Actor"
+```
 
 ## Messages and Behaviour
 We follow four steps to create and send messages to an Actor:
