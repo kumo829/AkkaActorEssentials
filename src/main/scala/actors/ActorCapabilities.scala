@@ -146,9 +146,9 @@ object ActorCapabilities extends App {
   val bankAccount = actorSystem.actorOf(BankAccountActor.props(1000), "bankAccount")
   val bankTeller = actorSystem.actorOf(Props[BankTeller], "bankTeller")
 
-  bankAccount ! Deposit(500, bankTeller)
-  bankAccount ! Deposit(500, bankTeller)
-  bankAccount ! Withdraw(300, bankTeller)
-  bankAccount ! Statement
+  bankAccount ! BankAccountActor.Deposit(500, bankTeller)
+  bankAccount ! BankAccountActor.Deposit(500, bankTeller)
+  bankAccount ! BankAccountActor.Withdraw(300, bankTeller)
+  bankAccount ! BankAccountActor.Statement
 
 }
