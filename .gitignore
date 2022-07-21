@@ -102,7 +102,7 @@ project/plugins/project/
 .history
 .cache
 .lib/
-
+null/*
 ### SBT Patch ###
 .bsp/
 
