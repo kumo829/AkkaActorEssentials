@@ -96,6 +96,7 @@ wordCounter ! "Hello World Akka Actors!"
 ## Examples
 - [Intro to actors and basic demo](./src/main/scala/actors/ActorsIntro.scala)
 - [Actor capabilities](./src/main/scala/actors/ActorCapabilities.scalas)
+- [Change Actor's behaviour using context.become](./src/main/scala/actors/ChangingActorBehaviour.scala)
 
 ## References
 - [Akka Essentials with Scala | Rock the JVM in Udemy](https://www.udemy.com/course/akka-essentials/learn/lecture/12418624#overview)
