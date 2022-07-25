@@ -93,6 +93,31 @@ val wordCounter: ActorRef = actorSystem.actorOf(Props[WorldCountActor], "wordCou
 wordCounter ! "Hello World Akka Actors!"
 ```
 
+## Actor Logging
+
+Actors use logback as default logging implementation, as is asynchronous (because is done with Actors!). There are two types of loggers that can be used in Actors: **explicit** and **implicit** or actor logging.
+
+Explicit logging: 
+```scala
+class SimpleActor extends Actor {
+  val logger = Logging(context.system, this) //actor system, logging source
+  
+  override def receive: Reveive = {
+    case message = logger.info("I received: {}", message.toString)
+  }
+}
+```
+
+Actor Logging (using the trait `ActorLogging`:
+
+```scala
+class SimpleActor extends Actor with ActorLogging {
+  override def receive: Reveive = {
+    case message = log.info("I received: {}", message.toString)
+  }
+}
+```
+
 ## Examples
 - [Intro to actors and basic demo](./src/main/scala/actors/ActorsIntro.scala)
 - [Actor capabilities](./src/main/scala/actors/ActorCapabilities.scala)
