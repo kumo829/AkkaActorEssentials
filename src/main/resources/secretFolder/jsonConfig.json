@@ -1,0 +1,7 @@
+{
+  "myProperty": "myVakue",
+  "type": "typeValue",
+  "akka": {
+    "loglevel": "DEBUG"
+  }
+}

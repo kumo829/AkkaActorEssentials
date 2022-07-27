@@ -118,6 +118,35 @@ class SimpleActor extends Actor with ActorLogging {
 }
 ```
 
+## Configuration
+
+There are many ways to configure an Akka application. The most common ones are: 
+1. Inline configuration. We can use the triple quotes and `stripMargin` to improve readability.
+2. Using the default config file `application.conf`.
+3. Using a different namespace in the default config file (`application.conf`). 
+4. Using a no-default file.
+5. Using a configuration file in a different format like JSON or properties.
+
+### Inline configuration
+
+```scala
+val configString =
+    """
+      | akka {
+      |   loglevel = "INFO"
+      | }
+    """.stripMargin
+
+  val config = ConfigFactory.parseString(configString)
+  val actorSystem = ActorSystem("actorSystem", ConfigFactory.load(config))
+
+  val actor = actorSystem.actorOf(Props[SimpleLoggingActor], "simpleActor")
+
+  actor ! "A message"
+```
+
+
+
 ## Examples
 - [Intro to actors and basic demo](./src/main/scala/actors/ActorsIntro.scala)
 - [Actor capabilities](./src/main/scala/actors/ActorCapabilities.scala)
