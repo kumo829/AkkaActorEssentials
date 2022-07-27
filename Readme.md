@@ -152,6 +152,7 @@ val configString =
 - [Actor capabilities](./src/main/scala/actors/ActorCapabilities.scala)
 - [Change Actor's behaviour using context.become](./src/main/scala/actors/ChangingActorBehaviour.scala)
 - [Child Actors](./src/main/scala/actors/ChildActors.scala) & [Child Actors Exercise](./src/main/scala/actors/ChildActorsExercise.scala)
+- [Intro to TestKit](./src/test/scala/BasicSpec.scala)
 
 ## References
 - [Akka Essentials with Scala | Rock the JVM in Udemy](https://www.udemy.com/course/akka-essentials/learn/lecture/12418624#overview)
