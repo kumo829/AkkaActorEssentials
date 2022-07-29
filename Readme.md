@@ -154,6 +154,7 @@ val configString =
 - [Child Actors](./src/main/scala/actors/ChildActors.scala) & [Child Actors Exercise](./src/main/scala/actors/ChildActorsExercise.scala)
 - [Intro to TestKit](./src/test/scala/BasicSpec.scala)
 - [TestProbes](./src/test/scala/TestProbeSpec.scala)
+- [Timed Assertions](./src/test/scala/TimedAssertionSpec.scala)
 
 ## References
 - [Akka Essentials with Scala | Rock the JVM in Udemy](https://www.udemy.com/course/akka-essentials/learn/lecture/12418624#overview)
