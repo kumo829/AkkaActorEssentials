@@ -155,6 +155,7 @@ val configString =
 - [Intro to TestKit](./src/test/scala/BasicSpec.scala)
 - [TestProbes](./src/test/scala/TestProbeSpec.scala)
 - [Timed Assertions](./src/test/scala/TimedAssertionSpec.scala)
+- [Synchronous test](./src/test/scala/SynchronousTestingSpec.scala)
 
 ## References
 - [Akka Essentials with Scala | Rock the JVM in Udemy](https://www.udemy.com/course/akka-essentials/learn/lecture/12418624#overview)
