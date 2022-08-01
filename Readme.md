@@ -160,6 +160,27 @@ Actors can be subject to a number of actions:
 - restarted: the actor is suspended and the actor instance is swapped. Internal state is destroyed on restart. 
 - stopped: frees the actor ref within a path.
 
+## The Backoff Supervisor Pattern
+This pattern wants to solve a big pain that we often see in Actors: the repeated restart of Actors when there is an error interacting with external resources.
+
+Restarting Actors immediately might do more harm than good is several actors are restarted at the same time (the external resource could go down again or the actors can be blocked).
+
+This pattern introduces exponential delays and randomness in between the attempts to rerun a supervision strategy.
+
+To implement this pattern we use the `BackoffOpts` object provided by Scala:
+
+```scala
+  val repeatedSupervisorProps = BackoffSupervisor.props(
+    BackoffOpts.onStop(
+      Props[EagerFileBasedPersistentActor],
+      "eagerActor",
+      1 second,
+      30 seconds,
+      0.1
+    )
+  )
+```
+
 ## Examples
 - [Intro to actors and basic demo](./src/main/scala/actors/ActorsIntro.scala)
 - [Actor capabilities](./src/main/scala/actors/ActorCapabilities.scala)
@@ -171,6 +192,7 @@ Actors can be subject to a number of actions:
 - [Synchronous test](./src/test/scala/SynchronousTestingSpec.scala)
 - [Stopping and watching Actors](./src/main/scala/actors/StartingStoppingActors.scala)
 - [Actor lifecycle](./src/main/scala/actors/ActorLifecycle.scala)
+- [Backoff Supervisor Pattern](./src/main/scala/actors/BackoffSupervisorPattern.scala)
 
 ## References
 - [Akka Essentials with Scala | Rock the JVM in Udemy](https://www.udemy.com/course/akka-essentials/learn/lecture/12418624#overview)
