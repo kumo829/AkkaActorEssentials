@@ -145,7 +145,20 @@ val configString =
   actor ! "A message"
 ```
 
+## Actor Lifecycle
 
+It's necessary to make a distinction between *Actor instances*, *Actor references*, and *Actor paths*. 
+
+- **Actor instance**: Has methods, such as *receive*, and may have internal state.
+- **Actor reference or incarnation**: is the one created using *actorOf*; has the mailbox and can receive messages. It contains one actor instance at any one time and a UUID given by the Actor System.
+- **Actor Path**: A space in the Actor System which may or may be not occupied by an Actor reference.
+
+Actors can be subject to a number of actions:
+- started: create a new ActorRef with a UUID at a given path.
+- suspended: the actor ref will enqueue but NOT process more messages.
+- resumed: the actor ref will continue processing more messages.
+- restarted: the actor is suspended and the actor instance is swapped. Internal state is destroyed on restart. 
+- stopped: frees the actor ref within a path.
 
 ## Examples
 - [Intro to actors and basic demo](./src/main/scala/actors/ActorsIntro.scala)
@@ -157,6 +170,7 @@ val configString =
 - [Timed Assertions](./src/test/scala/TimedAssertionSpec.scala)
 - [Synchronous test](./src/test/scala/SynchronousTestingSpec.scala)
 - [Stopping and watching Actors](./src/main/scala/actors/StartingStoppingActors.scala)
+- [Actor lifecycle](./src/main/scala/actors/ActorLifecycle.scala)
 
 ## References
 - [Akka Essentials with Scala | Rock the JVM in Udemy](https://www.udemy.com/course/akka-essentials/learn/lecture/12418624#overview)
