@@ -181,6 +181,26 @@ To implement this pattern we use the `BackoffOpts` object provided by Scala:
   )
 ```
 
+## Routers
+Routers allow to delegate/spread work to multiple Actors at the same time.
+
+Routers can use different algorithms to select to which Actor to send the message to:
+- Round robin
+- Random
+- Smallest Mailbox
+- Broadcast
+- Scatter-gather-first
+- Tail-chipping
+- Consistent-hashing
+
+There are 3 ways to create Routers
+
+1. By hand using the `akka.routing.Router`.
+2. Using a Pool router (a router Actor with its own children). This option offers two different approaches:
+   - Programmatically (in code).
+   - From configuration.
+3. Using a Group Router (with actors created elsewhere)
+
 ## Examples
 - [Intro to actors and basic demo](./src/main/scala/actors/ActorsIntro.scala)
 - [Actor capabilities](./src/main/scala/actors/ActorCapabilities.scala)
@@ -194,6 +214,7 @@ To implement this pattern we use the `BackoffOpts` object provided by Scala:
 - [Actor lifecycle](./src/main/scala/actors/ActorLifecycle.scala)
 - [Backoff Supervisor Pattern](./src/main/scala/actors/BackoffSupervisorPattern.scala)
 - [Schedulers and Timers](./src/main/scala/infra/TimersSchedulers.scala)
+- [Routers](./src/main/scala/infra/Routers.scala)
 
 ## References
 - [Akka Essentials with Scala | Rock the JVM in Udemy](https://www.udemy.com/course/akka-essentials/learn/lecture/12418624#overview)
