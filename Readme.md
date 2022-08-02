@@ -193,6 +193,7 @@ To implement this pattern we use the `BackoffOpts` object provided by Scala:
 - [Stopping and watching Actors](./src/main/scala/actors/StartingStoppingActors.scala)
 - [Actor lifecycle](./src/main/scala/actors/ActorLifecycle.scala)
 - [Backoff Supervisor Pattern](./src/main/scala/actors/BackoffSupervisorPattern.scala)
+- [Schedulers and Timers](./src/main/scala/infra/TimersSchedulers.scala)
 
 ## References
 - [Akka Essentials with Scala | Rock the JVM in Udemy](https://www.udemy.com/course/akka-essentials/learn/lecture/12418624#overview)
