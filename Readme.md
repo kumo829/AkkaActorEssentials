@@ -215,6 +215,7 @@ There are 3 ways to create Routers
 - [Backoff Supervisor Pattern](./src/main/scala/actors/BackoffSupervisorPattern.scala)
 - [Schedulers and Timers](./src/main/scala/infra/TimersSchedulers.scala)
 - [Routers](./src/main/scala/infra/Routers.scala)
+- [Mailboxes](./src/main/scala/infra/Mailboxes.scala)
 
 ## References
 - [Akka Essentials with Scala | Rock the JVM in Udemy](https://www.udemy.com/course/akka-essentials/learn/lecture/12418624#overview)
