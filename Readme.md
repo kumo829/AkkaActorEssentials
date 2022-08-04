@@ -201,6 +201,10 @@ There are 3 ways to create Routers
    - From configuration.
 3. Using a Group Router (with actors created elsewhere)
 
+## Akka Patterns
+- [Stashng Messages](./src/main/scala/patterns/StashPattern.scala)
+
+
 ## Examples
 - [Intro to actors and basic demo](./src/main/scala/actors/ActorsIntro.scala)
 - [Actor capabilities](./src/main/scala/actors/ActorCapabilities.scala)
