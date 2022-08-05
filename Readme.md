@@ -203,6 +203,7 @@ There are 3 ways to create Routers
 
 ## Akka Patterns
 - [Stashng Messages](./src/main/scala/patterns/StashPattern.scala)
+- [Ask Pattern](./src/main/scala/patterns/AskPattern.scala)
 
 
 ## Examples
