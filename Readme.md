@@ -204,6 +204,7 @@ There are 3 ways to create Routers
 ## Akka Patterns
 - [Stashng Messages](./src/main/scala/patterns/StashPattern.scala)
 - [Ask Pattern](./src/main/scala/patterns/AskPattern.scala)
+- [Finite State Machine](./src/main/scala/patterns/FiniteStateMachinePattern.scala)
 
 
 ## Examples
