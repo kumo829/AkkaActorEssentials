@@ -1,13 +1,59 @@
 # Akka Actors Essentials
 
+| Technology                                                                                                                            | Version |
+|---------------------------------------------------------------------------------------------------------------------------------------|:-------:|
+| <img align="left" alt="Scala" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scala/scala-original.svg" />   Scala | 2.13.8  |
+| <img align="left" alt="Akka" width="40" src="https://www.svgrepo.com/show/353381/akka.svg" /> Akka Actors                             | 2.6.19  |
+| <img align="left" alt="sbt" width="40" src="https://upload.wikimedia.org/wikipedia/commons/4/43/Sbt-logo.svg" /> SBT                  | 1.7.1  |
+
 Akka Actors is a new wat to think about concurrent, distributed, and fault-tolerant code.
 
+Akka is an open source library available on Apache License Version 2.0.
+
+We can develop applications using Akka to utilize today's multicore CPUs efficiently to improve application performance. In the old versions, Scala had the Actors library; Lightbend has removed it from Scala and moved it to the Akka Toolkit. Now the scala.actors library is no longer useful, and it is deprecated.
+
+Akka is an Event-Driven middleware framework for building high-performance, highly Scalable, highly available, and Reliable distributed applications in Java and Scala.
+
 ## Why Akka:
+
+
+Akka is an open source library or a toolkit and runtime from Lightbend Inc. (formerly known as Typesafe), written in the Scala language to develop these attributes:
+
+- Concurrent
+- Distributed
+- Fault-Tolerant
+- Message-Driven
+- Responsive
+- Highly Scalable
+- Asynchronous
+- Non-blocking
+- Highly performant
+- Highly available
+- Ease of maintenance
+
+And provides the following benefits:
 
 1. it speeds up the development of concurrent applications by as much as 10x
 2. its demand has exploded
 3. it's a highly marketable skill
 4. it's incredibly fun - once tasted Akka, you'll never want to get back to threads
+5. It is open source  
+6. By design, it is distributed, and it's very easy to use distributed applications  
+7. It supports clustering 
+8. It supports Reactive Streams using the Akka Streams module 
+9. It is easy to develop highly performant, highly scalable, highly maintainable, and highly available applications using Akka 
+10. It supports concurrency using the Actor Model. Unlike Java's Shared-State Model (which is low-level API), the Actor-based Concurrency Model is a high-level API to write Concurrency and Parallelism programming without threads, locking, and other issues. 
+11. It supports scalability in both directions:
+- Scale up (vertically)
+- Scale out (horizontally)
+12. It is easy to test Akka application's components
+13. By design, it supports Reactive Streams specifications—Message-Driven, Resilient (Fault-Tolerant), Elastic (Scalable), and Responsive
+14. It supports self-healing
+15. It supports Location Transparency, which means looking-up or identifying the Actors is the same for both local Actors (which are located in the same JVM) or remote Actors (which are located in the remote JVM)
+
+The Akka Toolkit supports the development of concurrent, asynchronous, non-blocking, Resilient, Elastic, Event-Driven, and Responsive systems very easily.
+
+Akka Toolkit supports Message-Driven programming using the Actor Model and without using any message brokers (such as RabbitMQ, Apache ActiveMQ, Apache Kafka, and more).
 
 ## Problems with the current thread model
 **#1 OOP encapsulation is only valid in the Single Thread Model**. The OOP encapsulation is broken in a multithreaded environment, 
@@ -29,6 +75,34 @@ With Actors
 - The interaction with the world is different, by sending messages to them, asynchronously.
 
 So, in a sense **Actores are objects that we can't access directly, but only send messages to**.
+
+## Features of Akka
+
+The Akka Toolkit supports the following features:
+
+- Actor Model
+- Distributed
+- Concurrency and Parallelism
+- Message-Driven
+- Fault-Tolerant
+- Highly Scalable
+- Akka uses the Typesafe Config Library to support configuration
+- Reactive
+- Location Transparency
+- Remote Actors
+- Automatic load balancing
+- Self-healing
+- Clustering
+- Developing WebServers using Akka HTTP
+- Cluster sharding
+- Remoting
+
+## Building blocks of the Akka Toolkit
+
+- ActorSystem 
+- Actor 
+- ActorContext 
+- ExecutionContext
 
 ## Actor Basics
 Every `Actor` type derives from:
