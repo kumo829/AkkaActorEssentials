@@ -300,3 +300,4 @@ There are 3 ways to create Routers
 ## References
 - [Akka Essentials with Scala | Rock the JVM in Udemy](https://www.udemy.com/course/akka-essentials/learn/lecture/12418624#overview)
 - [Akka Classic Actor reference](https://doc.akka.io/docs/akka/current/index-actors.html)
+- [Scala Asynchronous Programming](https://app.pluralsight.com/library/courses/scala-asynchronous-programming/table-of-contents)
