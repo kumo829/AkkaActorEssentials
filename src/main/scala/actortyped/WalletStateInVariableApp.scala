@@ -29,7 +29,7 @@ object WalletState {
 
 }
 
-object WalletStateApp extends App {
+object WalletStateInVariableApp extends App {
   val guardian: ActorSystem[WalletState.Command] = ActorSystem(WalletState(0, 2), "wallet-state")
 
   guardian ! WalletState.Increase(1)

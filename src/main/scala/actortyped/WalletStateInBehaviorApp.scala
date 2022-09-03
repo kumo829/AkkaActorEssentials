@@ -3,7 +3,7 @@ package actortyped
 import akka.actor.typed.{ActorSystem, Behavior}
 import akka.actor.typed.scaladsl.Behaviors
 
-object WalletOnOff extends App {
+object WalletStateInBehaviorApp extends App {
   sealed trait Command
   final case class Increase(amount: Int) extends Command
   final case object Deactivate extends Command
@@ -38,7 +38,7 @@ object WalletOnOff extends App {
 
 
 
-  val guardian: ActorSystem[Command] = ActorSystem(WalletOnOff(), "wallet-on-off")
+  val guardian: ActorSystem[Command] = ActorSystem(WalletStateInBehaviorApp(), "wallet-on-off")
   guardian ! Increase(1)
   guardian ! Deactivate
   guardian ! Increase(1)
